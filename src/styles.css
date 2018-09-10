@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700');
+body{
+    padding-top: 3.5rem;
+    font-family: 'Muli', sans-serif;
+}
+
+section {
+    height:300px;
+    padding-top:50px;
+    padding-bottom:50px;
+    overflow:auto;
+}
+
+.bg-1 {
+	background: url('/assets/home_image5.jpg') no-repeat center center fixed;
+    color:#fff;
+    background-size:cover;
+    
+}
+
+.homeform{
+    margin-top: 2.5rem;
+}
+
+h1 {
+    line-height:1.5;
+}
+
+.bg {
+    background: -webkit-linear-gradient(to left,#7b4397,#dc2430);
+    background: linear-gradient(to left,#7b4397,#dc2430);
+}
+
+.h-100 {
+    height: 100%!important;
+}
+
+.padding-150 {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.padding-80 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+/* update nav links */
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+     color: #fff;
+}
+
+.navbar-light a.active {
+    font-weight: 900;
+    color: rgba(0,0,0,.9)!important;
+}
+
+/* header  */
+.device-container {
+    max-width: 325px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.iphone-mockup >.device, .iphone-mockup e>.device {
+    background-image: url(assets/iphone_white.png);
+}
+
+
+.iphone-mockup {
+    position: relative;
+    width: 100%;
+    padding-bottom: 61.775701%;
+}
+
+.iphone-mockup {
+    padding-bottom: 201.76%;
+}
+
+.iphone-mockup>.device {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.iphone-mockup.black>.device, .iphone-mockup.black>.device, .iphone-mockup.black>.device {
+    background-image: url(./assets/iphone_black.png);
+}
+
+.iphone-mockup.white>.device, .iphone-mockup.white>.device, .iphone-mockup.white>.device {
+    background-image: url(./assets/iphone_white.png);
+}
+
+.iphone-mockup>.device>.screen, .iphone-mockup>.device>.screen {
+    top: 11.58%;
+    bottom: 11.58%;
+    left: 5.97%;
+    right: 5.97%;
+}
+
+.iphone-mockup>.device>.screen {
+    position: absolute;
+    overflow: hidden;
+}
+
+
+.ccenum{
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.icon-color{
+    color: darkcyan;
+}
+
+.paddingZero {
+    padding: 0;
+}
+
+.bg-cloud {
+    background: rgb(236, 240, 241);
+}
+
+.bg-warning {
+    background: #fdcc52
+}

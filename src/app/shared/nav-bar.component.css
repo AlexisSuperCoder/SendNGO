@@ -1,0 +1,32 @@
+
+
+.navbar-toggler {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #fff;
+    border-radius: 0;
+  }
+
+  .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+  .preview{
+    height:  20px;
+    border-radius: 50%;
+  }
+  .preview2{
+    margin: auto;
+    height: auto;
+    max-width: 100%;
+   /* max-height: 300px;*/
+    border-radius: 50%;
+   
+  }
+ /* li.nav-item{
+    align-content: center;
+  } 
+  .previewpos{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+  } */

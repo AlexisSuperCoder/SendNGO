@@ -1,0 +1,144 @@
+
+<sendzy-nav-bar></sendzy-nav-bar>
+<div class="content-box justify-content-center">
+  <div class="content-title wow  fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+    <h3>Que souhaitez-vous publier?</h3>
+    <div class="container">
+       <form (ngSubmit)="f.form.valid && CreateAdvert()" #f="ngForm">
+            <fieldset class="form-group">
+              <legend>Trajet</legend>
+              <div  class="form-group row">
+                <label class="form-control-label col-form-label text-md-right col-md-2"
+                       for="depart">Depart</label>
+                <div class="col-md-6">
+                    <input class="form-control form-control-success"
+                    name="villeDepart"
+                    [(ngModel)]="model.villeDepart"
+                    #villeDepart = 'ngModel'
+                    type="text" 
+                    id="depart" 
+                    placeholder="Depart">
+                </div>
+              </div>
+
+              <div  class="form-group row">
+                  <label class="form-control-label col-form-label text-md-right col-md-2"
+                  for="destination">Destination</label>
+                 <div class="col-md-6" >
+                    <input class="form-control"
+                     type="text" id="destination"
+                     placeholder="Destination" 
+                     name="villeDestination"
+                     [(ngModel)]="model.villeDestination"
+                     #villeDestination="ngModel"
+                     >
+                 </div>
+                </div>
+            </fieldset>
+
+            <fieldset  class="form-group">
+                <legend>Information colis</legend>
+                <div  class="form-group row">
+                  <label class="form-control-label col-form-label text-md-right col-md-2" for="intitule">Intitulé</label>
+                 <div class="col-md-6" >
+                  <input class="form-control" 
+                  type="text" id="intitule" 
+                  placeholder="Intitulé"
+                  name="intitule"
+                  [(ngModel)]="model.intitule"
+                  #intitule="ngModel"
+                  >
+                 </div>
+                </div>
+
+                <div  class="form-group row">
+                    <label class="form-control-label col-form-label text-md-right col-md-2"
+                     for="poids">Poids</label>
+                    <div class="col-md-6">
+                        <input class="form-control" 
+                        type="text" 
+                        id="poids" 
+                        name="poids"
+                        [(ngModel)]="model.poids"
+                        #poids="ngModel"
+                        placeholder="Poids">
+                    </div>
+                    </div>
+
+                <div  class="form-group row">
+                    <label class="form-control-label col-form-label text-md-right col-md-2"
+                    for="dimensions">Dimensions</label>
+                    <div class="col-md-6">
+                    <input class="form-control" 
+                    type="text" 
+                    id="dimensions"
+                    name="dimensions"
+                    [(ngModel)]="model.dimensions"
+                    #dimensions="ngModel"
+                     placeholder="Dimensions">
+                    </div>
+                  </div>
+
+                <div  class="form-group row">
+                    <label class="form-control-label col-form-label text-md-right col-md-2"
+                     for="description">Description</label>
+                      <div class="col-md-6" >
+                          <textarea class="form-control" 
+                          type="text" 
+                          id="description" 
+                          name="description"
+                          [(ngModel)]="model.description"
+                          #description="ngModel"
+                          rows="3"
+                           placeholder="Description">
+                        </textarea>
+                      </div>      
+                    </div>
+              </fieldset>
+
+              <fieldset  class="form-group">
+                  <legend>Modalités</legend>
+                  <div  class="form-group row">
+                    <label class="form-control-label  col-form-label text-md-right col-md-2" for="date">Date limite</label>
+                   <div class="col-md-6" >
+                    <input class="form-control" 
+                    type="date"
+                    id="dateLimit" 
+                    name="dateLimit"
+                    [(ngModel)]="model.dateLimit"
+                    #dateLimit="ngModel"
+                    placeholder="date limite">
+                   </div>
+                  </div>
+
+                  <div  class="form-group row">
+                      <label class="form-control-label col-form-label text-md-right col-md-2" for="pourboire">Pourboire</label>
+                      <div class="col-md-6">
+                      <input class="form-control" 
+                      type="text" 
+                      id="pourboire" 
+                      name="pourboire"
+                      [(ngModel)]="model.pourboire"
+                      #pourboire="ngModel"
+                      placeholder="Pourboire"
+                      >
+                      </div>
+                    </div>
+                </fieldset>
+                
+                <div class="form-group row">
+                  <div class="offset-md-2 col-auto">
+                      <button class="btn btn-primary" type="submit">Submit</button>
+                  </div>
+                </div>
+       </form>
+    </div>
+  </div>
+</div>
+
+
+<pre>
+
+    Form Values : {{f.value | json}}
+
+  </pre>

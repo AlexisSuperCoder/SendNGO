@@ -1,0 +1,18 @@
+#myform{
+    position: relative;
+}
+
+#searchtrips{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+#triplist{
+    margin-bottom: 5px;
+}
+.tripcard{
+    border:1px solid groove;
+    border-radius:2px;
+    background-color: aqua;
+    flex-wrap: wrap;
+    width: 800px;
+}

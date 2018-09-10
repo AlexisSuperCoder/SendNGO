@@ -1,0 +1,121 @@
+<div>
+  <nav class="navbar navbar-expand-lg navba-light bg-light fixed-top">
+    <div class="container">
+      <h1>
+        <a href="#" class="navbar-brand">
+          <img src="http://via.placeholder.com/40x40" alt="brand logo"> Sendizy
+        </a>
+      </h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item">
+            <a class="nav-link smooth-scroll" [routerLink]="['/annonceslist']" >Les annonces</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link smooth-scroll" [routerLink]="['/advert']">Publier une annonce</a>
+          </li>
+        </ul>
+
+        <ul *ngIf="!currentUser" class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link smooth-scroll" [routerLink]="['/login']">Se connecter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link smooth-scroll" [routerLink]="['/register']">S'inscire</a>
+          </li>
+        </ul>
+        <!-- <ul *ngIf="currentUser" class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="#">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">{{currentUser.username}} Logged In</a>
+          </li>
+        </ul> -->
+
+        <ul *ngIf="currentUser" class="navbar-nav ml-auto">
+          <li class="nav-item previewpos">
+              <a href="#"> <div data-toggle="modal" data-target="#picmodal"><img [src]="'../../'+ currentUser.profilePicture" alt="" class="img-responsive preview"></div></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Welcome {{currentUser.username}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="fa fa-user"></i> Mon compte</a>
+              <a class="dropdown-item" href="#">Mes annonces</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" (click)="logout()">
+                <i class="fa fa-sign-out"></i> Se deconnecter</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- u^date picture -->
+<form #frmPicture="ngForm" id="updatepictureform" enctype="multipart/form-data" (submit)="updateProfilePictureBinary(frmPicture)" >
+  <div class="modal" id="picmodal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+            <h4 id="myModalLabel">
+                upload picture
+              </h4>
+            <button class="close" data-dismiss="modal">
+              &times;
+            </button>
+         </div>
+         <div class="modal-body">
+           <div *ngIf="LoadPictureMessage" id="updatepicturemessage">
+             <div class="alert alert-danger">
+               <div *ngFor="let msg of LoadPictureMessage.split('\n')">
+                  {{msg}} <br/>
+                </div> 
+             </div>
+           </div>
+           <div *ngIf="!LoadPictureMessage && currentpicture"><img class="preview2 justify-content-center" [attr.src]="currentpicture"  alt="picture view"></div>
+           <div class="form-group">
+             <label for="picture">Select a picture:</label>
+             <input  type="file" name="picture" id="picture" class="form-control"  (change)="onFileChange($event)">
+           </div>
+         </div>
+         <div class="modal-footer">
+            <input [disabled]="LoadPictureMessage" type="submit" class="btn btn-success" value="submit" name="updatepicture">
+          <button   class="btn btn-default" data-dismiss="modal" >Cancel</button> 
+          </div>
+       </div>
+     </div>
+  </div>
+</form>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
+  <a class="navbar-brand" href="https://sendizy.fr/"><img src="assets/logo.png" height="50"/>
+  Sendizy
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="menu">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Les annonces<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Publier une annonce</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Se connecter</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
